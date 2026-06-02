@@ -1,0 +1,29 @@
+BLAKKBOXTUNING - AGGRESSIVE TUNE PRECHECK REPORT
+
+SW ID: 89663-0KD00
+Platform: Toyota DENSO 2KD
+Original Size: 376832 bytes
+Modified Size: 376832 bytes
+Modified Bytes: 3925
+
+Workflow Validation:
+- File size alignment: PASS
+- Byte-level delta detection: PASS
+- OEM region preservation check: PARTIAL
+- Modified-region-only workflow: DETECTED
+
+Recommended Aggressive Tune Refinement Strategy:
+- Refine torque request transitions
+- Smooth boost ramp regions
+- Control smoke limiter transitions
+- Stabilize rail pressure rise
+- Reduce idle and cold-start rattle spikes
+- Preserve zero-group EGR/DTC regions
+- Maintain interpolation continuity
+- Filter extreme deltas using BLAKKBOX logic
+
+Safety Constraints:
+- Do not modify untouched OEM regions
+- Do not alter checksum zones before validation
+- Preserve axis continuity
+- Prevent overboost and overfuel spikes
