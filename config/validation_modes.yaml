@@ -1,0 +1,38 @@
+validation_modes:
+  strict:
+    checksum_validation: true
+    interpolation_validation: true
+    combustion_validation: true
+    torque_hierarchy_validation: true
+    smoke_sync_validation: true
+    rail_pressure_validation: true
+    boost_safety_validation: true
+    preserve_oem_regions: true
+    export_allowed_on_warning: false
+
+  balanced:
+    checksum_validation: true
+    interpolation_validation: true
+    combustion_validation: true
+    torque_hierarchy_validation: true
+    smoke_sync_validation: true
+    rail_pressure_validation: true
+    boost_safety_validation: true
+    preserve_oem_regions: true
+    export_allowed_on_warning: true
+
+  analysis:
+    checksum_validation: true
+    interpolation_validation: advisory
+    combustion_validation: advisory
+    torque_hierarchy_validation: advisory
+    smoke_sync_validation: advisory
+    rail_pressure_validation: advisory
+    boost_safety_validation: advisory
+    preserve_oem_regions: true
+    export_allowed_on_warning: true
+
+minimum_protection:
+  rom_size_alignment_required: true
+  checksum_presence_required: true
+  protected_region_preservation_required: true
