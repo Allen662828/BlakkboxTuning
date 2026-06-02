@@ -1,0 +1,60 @@
+profile:
+  name: Economy Tune
+  platform: Toyota DENSO 2KD
+  sw_id: 89663-0KD00
+
+strategy:
+  objective:
+    - reduce fuel consumption
+    - preserve OEM reliability
+    - reduce smoke output
+    - stabilize combustion
+
+  driver_wish:
+    low_load: preserve
+    cruise_zone: -3_percent
+    high_load: -2_percent
+    smoothing: enabled
+
+  torque_limiters:
+    preserve_hierarchy: true
+    peak_torque_change: 0_percent
+    transition_smoothing: enabled
+
+  smoke_limiters:
+    low_air_regions: tighter
+    afr_target_bias: lean_safe
+    smoke_reduction: enabled
+
+  rail_pressure:
+    cruise_zone: +1_percent
+    peak_zone: preserve
+    smoothing: enabled
+    max_limit_bar: 240
+
+  injection_timing:
+    idle_rattle_reduction: enabled
+    cruise_efficiency_bias: enabled
+    interpolation_validation: enabled
+
+  boost_targets:
+    low_load: preserve
+    cruise_zone: +1_percent
+    overboost_protection: enabled
+    spool_smoothing: enabled
+    max_limit_kpa: 285
+
+safety:
+  preserve_oem_regions: true
+  preserve_egr_regions: true
+  preserve_dtc_regions: true
+  checksum_rebuild_required: true
+  combustion_safe_validation: true
+  interpolation_continuity_required: true
+
+blakkbox_delta_logic:
+  delta_0_5: keep
+  delta_5_8: multiply_0_80
+  delta_gt_8: multiply_0_55
+  remove_spikes: true
+  smooth_transitions: true
