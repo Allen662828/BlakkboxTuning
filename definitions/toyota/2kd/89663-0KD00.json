@@ -1,0 +1,29 @@
+{
+  "sw_id": "89663-0KD00",
+  "platform": "Toyota DENSO 2KD",
+  "processor": "SH7055",
+  "known_maps": {
+    "driver_wish": {
+      "status": "candidate"
+    },
+    "torque_limiters": {
+      "status": "candidate"
+    },
+    "smoke_limiters": {
+      "status": "candidate"
+    },
+    "rail_pressure": {
+      "status": "candidate"
+    },
+    "boost_targets": {
+      "status": "candidate"
+    },
+    "injection_timing": {
+      "status": "candidate"
+    }
+  },
+  "checksum": {
+    "family": "SH7055",
+    "status": "pending_validation"
+  }
+}
