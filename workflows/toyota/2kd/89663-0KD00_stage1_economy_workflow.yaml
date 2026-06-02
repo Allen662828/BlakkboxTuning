@@ -1,0 +1,97 @@
+workflow:
+  name: Toyota Innova 2KD 2010 M/T Stage1 Economy Workflow
+  sw_id: 89663-0KD00
+  platform: Toyota DENSO 2KD
+  transmission: Manual
+  fuel: Diesel
+
+source_strategy:
+  original_bin:
+    mode: read_only
+    preserve_oem_structure: true
+
+  mod_bin:
+    mode: editable
+    base_strategy: stage1_mod_reference
+
+primary_targets:
+  - fix_black_smoke_startup
+  - fix_black_smoke_idle
+  - reduce_smoke_low_load_to_wot
+  - reduce_fuel_knock_idle
+  - reduce_fuel_knock_load
+  - reduce_fuel_knock_wot
+  - reduce_cold_start_rattle
+  - reduce_idle_rattle
+  - reduce_low_load_pull_harshness
+  - reduce_white_smoke_cold_start
+  - improve_economy_drivability
+
+protected_structures:
+  preserve:
+    - egr_zero_groups
+    - dtc_masks
+    - switch_logic
+    - checksum_areas
+    - binary_structure
+    - untouched_oem_regions
+
+analysis_pipeline:
+  - verify_sw_id
+  - verify_rom_size
+  - detect_modified_regions
+  - detect_descriptor_candidates
+  - extract_axis_candidates
+  - classify_maps
+  - validate_interpolation
+  - validate_combustion_safety
+
+combustion_refinement:
+  strategy: conservative_cleanup
+
+  objectives:
+    - cleaner_combustion
+    - smoother_low_load_operation
+    - reduced_excessive_fueling
+    - reduced_harsh_combustion
+    - stable_transient_behavior
+    - cleaner_cold_start_behavior
+
+  smoke_control:
+    startup_fuel_reduction: enabled
+    idle_smoke_cleanup: enabled
+    low_air_smoke_protection: enabled
+
+  timing_control:
+    idle_rattle_reduction: enabled
+    cold_start_smoothing: enabled
+    harsh_combustion_reduction: enabled
+
+  rail_pressure:
+    stabilize_transitions: enabled
+    oscillation_reduction: enabled
+    preserve_safe_limits: true
+
+  boost_control:
+    smooth_spool: enabled
+    prevent_overboost: true
+    airflow_efficiency_bias: enabled
+
+blakkbox_delta_logic:
+  delta_0_5: keep
+  delta_5_8: multiply_0_80
+  delta_gt_8: multiply_0_55
+  remove_spikes: true
+  smooth_transitions: true
+  preserve_interpolation: true
+
+checksum_policy:
+  exported_bin_state: unchecked
+  manual_bitedit_correction_required: true
+
+rom_metrics:
+  rom_size: 376832
+  modified_bytes: 3925
+  protected_zero_group_bytes: 45
+  enhanced_bytes: 3880
+  checksum_status: uncorrected
