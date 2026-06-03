@@ -1,0 +1,19 @@
+{
+  "software_id": "89663-0K383",
+  "family": "Toyota Denso Diesel 2",
+  "engine": "2KD",
+  "ecu_architecture": "SH705x",
+  "status": "experimental",
+  "workflow_rules": {
+    "preserve_oem_regions": true,
+    "delta_logic": "BLAKKBOX",
+    "smooth_interpolation": true,
+    "remove_spikes": true,
+    "validate_contiguous_regions": true
+  },
+  "notes": [
+    "Semantic map addresses not yet validated",
+    "Use conservative enhancement only",
+    "Do not apply blind global amplification"
+  ]
+}
