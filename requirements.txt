@@ -4,3 +4,4 @@ pdfminer.six
 Pillow
 exifread
 pytest
+numpy
