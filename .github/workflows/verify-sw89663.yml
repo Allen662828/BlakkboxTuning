@@ -1,0 +1,28 @@
+name: Verify SW89663 MOD checksum
+
+on:
+  push:
+    paths:
+      - "binaries/SW89663-0K383/**"
+      - "docs/SW89663-0K383/**"
+      - ".github/workflows/verify-sw89663.yml"
+  pull_request:
+
+jobs:
+  verify-checksum:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify fixed MOD checksum
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("binaries/SW89663-0K383/FIXED - SW#89663-0K383 MOD checksum-corrected.bin")
+          data = p.read_bytes()
+          assert len(data) == 376832, f"Unexpected size: {len(data)}"
+          assert (sum(data) & 0xff) == 0x49, f"Bad sum8: 0x{sum(data)&0xff:02X}"
+          assert data[0x05BFFF] == 0x05, f"Bad checksum byte: 0x{data[0x05BFFF]:02X}"
+          print("Checksum verification passed")
+          PY
