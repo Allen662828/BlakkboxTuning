@@ -1,0 +1,43 @@
+name: Validate calibration packages
+
+on:
+  push:
+    paths:
+      - "calibrations/**"
+      - "tools/validate_calibration_package.py"
+      - ".github/workflows/validate-calibration-packages.yml"
+  pull_request:
+    paths:
+      - "calibrations/**"
+      - "tools/validate_calibration_package.py"
+      - ".github/workflows/validate-calibration-packages.yml"
+
+jobs:
+  validate-calibration-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find calibration manifests
+        id: manifests
+        shell: bash
+        run: |
+          mapfile -t manifests < <(find calibrations -name manifest.json -type f 2>/dev/null | sort)
+          if [ "${#manifests[@]}" -eq 0 ]; then
+            echo "No calibration manifests found."
+            echo "manifest_list=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          printf '%s\n' "${manifests[@]}"
+          {
+            echo "manifest_list<<EOF"
+            printf '%s\n' "${manifests[@]}"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Validate manifests
+        if: steps.manifests.outputs.manifest_list != ''
+        shell: bash
+        run: |
+          python3 tools/validate_calibration_package.py ${{ steps.manifests.outputs.manifest_list }}
