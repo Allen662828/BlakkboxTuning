@@ -1,0 +1,18 @@
+{
+  "sw_id": "89663-0K383",
+  "ecu": "DENSO K-LINE",
+  "engine": "2KD-FTV 2.5",
+  "transmission": "MT",
+  "original_file": "ORIGINAL - SW#89663-0K383.bin",
+  "mod_file": "STAGE 2 - SW#89663-0K383-  MOD.bin",
+  "final_file": "FIXED - STAGE 2 - SW#89663-0K383 MOD checksum-corrected.bin",
+  "checksum_method": "full-file sum8 matches original",
+  "checksum_correction_offset": "0x05BFFF",
+  "review": {
+    "smoke_control": "Reviewed modified-region-only delta for smoke-control continuity, boost-before-fuel behavior, and rich transient risk.",
+    "fuel_knock": "Reviewed injection progression and low-RPM transition areas for abrupt fuel-delivery changes that can increase knock or harshness.",
+    "combustion_stability": "Reviewed pilot-main continuity, rail/fuel synchronization, and torque transition behavior for combustion stability.",
+    "surface_quality": "Reviewed modified map surfaces for cliffs, stair-steps, sharp gradients, and neighboring-cell discontinuities.",
+    "structural_integrity": "Confirmed original file is read-only, SW ID is matched, file sizes match, and final changes remain traceable to reviewed MOD delta plus checksum correction."
+  }
+}
