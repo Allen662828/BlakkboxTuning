@@ -1,0 +1,19 @@
+{
+  "sw_id": "89663-0K383",
+  "ecu": "DENSO K-LINE",
+  "engine": "2KD-FTV 2.5",
+  "transmission": "MT",
+  "original_file": "ORIGINAL - SW#89663-0K383.bin",
+  "mod_file": "STAGE 1 - SW#89663-0K383-  MOD.bin",
+  "final_file": "FIXED - STAGE 1 - SW#89663-0K383 checksum-corrected.bin",
+  "checksum_method": "full-file sum8 matches original",
+  "checksum_correction_offset": "0x05BFFF",
+  "checksum_correction": "0x00->0x40",
+  "review": {
+    "smoke_control": "Checksum-only fix. Existing STAGE 1 smoke-control calibration data was preserved without additional fuel, boost, or limiter edits.",
+    "fuel_knock": "Checksum-only fix. Existing STAGE 1 injection and combustion-related calibration data was preserved without additional timing or duration edits.",
+    "combustion_stability": "Checksum-only fix. Existing STAGE 1 torque, rail, injection, and combustion-related calibration data was preserved byte-for-byte.",
+    "surface_quality": "Checksum-only fix. Existing STAGE 1 map surfaces were not smoothed or reshaped; no blind map reconstruction was applied.",
+    "structural_integrity": "Original file is read-only, file sizes match, final differs from STAGE 1 only by the checksum correction byte, and full-file sum8 matches original."
+  }
+}
