@@ -1,5 +1,6 @@
-fastapi
-uvicorn[standard]
-python-multipart
-pydantic
+# Additional requirements for analysis and unsorted-data ingestion
+python-magic
+pdfminer.six
+Pillow
+exifread
 pytest
