@@ -1,0 +1,22 @@
+STAGE 1 FIX FILE CREATED
+Original: C:\Users\Allen\Desktop\SW#89663-0K383\ORIGINAL - SW#89663-0K383.bin
+MOD: C:\Users\Allen\Desktop\SW#89663-0K383\STAGE 1 - SW#89663-0K383-  MOD.bin
+Fixed: C:\Users\Allen\Desktop\SW#89663-0K383\FIXED - STAGE 1 - SW#89663-0K383 checksum-corrected.bin
+Size: 376832 bytes
+Original sum8: 0x49
+MOD sum8 before: 0x09
+Fixed sum8: 0x49
+Patch offset: 0x05BFFF
+Patch byte: 0x00 -> 0x40
+Original SHA256: 512997778851F48BB7DE2CEE38D39BEAF847E978616071CFC6F7497DF5583E1D
+MOD SHA256: DED52DA4C100DFC9B8635029544AF65A96F0E8AA62BA626B81C891FA21BB1A36
+Fixed SHA256: F4FFAC9D9A83176672BA678AF7E0A1B46919ED8AC99784A0B01900C5F96AD47A
+Original vs MOD changed bytes: 3923
+Original vs fixed changed bytes: 3924
+MOD vs fixed changed bytes: 1
+Changed ranges: 642
+Changed LE16 words: 2214
+LE16 increases: 2181
+LE16 decreases: 33
+LE16 median delta: 1076
+LE16 median ratio: 1.186636
