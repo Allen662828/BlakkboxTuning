@@ -1,4 +1,3 @@
-# tests for unsorted ingest
 import os
 import tempfile
 from backend.unsorted_data.ingest import ingest_file
