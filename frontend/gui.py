@@ -1,0 +1,1 @@
+print('DENSO ROM STUDIO GUI')

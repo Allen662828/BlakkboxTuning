@@ -1,36 +1,35 @@
-# BlakkboxTuning
+# DENSO ROM STUDIO AUTO
 
-Advanced DENSO diesel ECU calibration analysis and enhancement platform.
+Offline DENSO ROM Analysis Platform
 
-## Core Features
+Features:
 
-- Original BIN read-only workflow
-- MOD BIN editable workflow
-- Byte-level delta comparison
-- SW ID detection
-- Axis and map table analysis
-- OEM structure preservation
-- Protected 0-group handling (EGR/DTC safe zones)
-- Smart interpolation correction
-- Smoke reduction refinement
-- Fuel knock correction
-- Idle and cold-start rattle reduction
-- Overboost and rail pressure correction
-- Economy / Sports / Aggressive / Maxout tune profiles
-- ChatGPT integration architecture
+* BIN comparison
+* ROM region classification
+* Map candidate detection
+* Delta analysis
+* OEM validation
+* JSON export
+* CSV export
+* HTML reporting
 
-## Platform Targets
+Supported Platforms:
 
-- Toyota DENSO
-- Mitsubishi DENSO
-- Nissan DENSO
-- SH705x / SH725xx families
+* Toyota DENSO
+* Mitsubishi DENSO
+* Nissan DENSO
 
-## Planned Stack
+Supported ROM Sizes:
 
-- FastAPI backend
-- Python calibration engine
-- React dashboard
-- Docker deployment
-- GitHub CI/CD
-- ChatGPT Actions integration
+* 368KB
+* 512KB
+* 768KB
+* 1MB
+* 2MB
+* 4MB
+
+Project Status:
+
+* Development
+* Offline Analysis Platform
+* Research and Educational Use
